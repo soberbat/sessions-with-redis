@@ -14,25 +14,7 @@ const dashboardController = require("./controllers/dashboard.controller");
 const app = express();
 const PORT = 3001;
 
-app.set("trust proxy", 1);
-
-console.log("trust proxy");
-
 app.use(cors(corsOptions));
-
-app.use(function (req, res, next) {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://frontendauth-6b5a3j5lyq-uc.a.run.app"
-  );
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-HTTP-Method-Override, Set-Cookie, Cookie"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  next();
-});
 
 app.use(cookieParser());
 app.use(bodyParser.json());

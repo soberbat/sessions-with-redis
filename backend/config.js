@@ -1,12 +1,7 @@
 const corsOptions = {
-  origin: [
-    "https://frontendauth-6b5a3j5lyq-uc.a.run.app",
-    "https://frontendauth-6b5a3j5lyq-uc.a.run.app/signup",
-    "https://frontendauth-6b5a3j5lyq-uc.a.run.app/signin",
-  ],
-  // origin: true,
+  origin: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, // If you are using cookies or sessions
+  credentials: true,
   exposedHeaders: ["set-cookie"],
 };
 
@@ -16,10 +11,9 @@ const sessionOptions = {
   saveUninitialized: false,
   resave: true,
   cookie: {
-    secure: true,
-    httpOnly: false,
+    path: "/",
     maxAge: 1000 * 60 * 30,
-    sameSite: "none",
+    sameSite: "strict",
   },
 };
 
