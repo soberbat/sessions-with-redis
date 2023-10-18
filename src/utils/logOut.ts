@@ -9,7 +9,7 @@ const config = {
   },
 };
 
-const endpoint = "http://localhost:3001/logout";
+const endpoint = "https://backendauth-6b5a3j5lyq-uc.a.run.app/logout";
 
 export default async function LogOut() {
   return axios.post(endpoint, {}, config);

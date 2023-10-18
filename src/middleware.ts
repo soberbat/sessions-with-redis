@@ -5,6 +5,12 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest, response: NextResponse) {
   const cookie = request.cookies.get("sessionCookie");
 
+  // if (request?.session) {
+  //   console.log(request.session);
+  // } else {
+  //   console.log("session doesnt exist");
+  // }
+
   if (!cookie) {
     const destinationUrl = new URL("/", new URL(request.url).origin);
     const response = NextResponse.redirect(destinationUrl);

@@ -8,8 +8,6 @@ module.exports = async (req, res) => {
     password
   );
 
-  console.log(isSuccesfull);
-
   if (isSuccesfull) {
     req.session.userSessionID = username;
     res.status(200).send({ isSuccesfull, message });
