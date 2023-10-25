@@ -1,6 +1,4 @@
-# Project Name
-
-AUTH
+# AUTH
 
 ## Description
 
@@ -26,19 +24,15 @@ This project is built using the following technologies and tools:
 
 To get started with this project, follow these steps:
 
-1. [Clone or download the repository]
+1. Clone or download the repository
 
-2. [NPM Install]
+2. NPM Install
 
-3. [Build and run the Docker container.](#docker-usage)
-
-## Usage
-
-[Explain how to use your project, provide code examples, and give users an understanding of how to interact with your APIs.]
+3. Build and run the Docker container
 
 ## Docker Usage
 
-This project can be easily containerized using Docker for development and deployment. Follow these steps to build and run the project in a Docker container:
+Follow these steps to build and run the project in a container:
 
 1. Build the Docker image:
 
@@ -52,7 +46,7 @@ This project can be easily containerized using Docker for development and deploy
    docker compose up
    ```
 
-3. Access the application in from an http client like nodemon `http://localhost:3001`. And send request to following routes:
+3. Access the application from a http client like nodemon `http://localhost:3001`. And send request to following routes:
 
 ### User Registration
 
@@ -118,5 +112,3 @@ This project can be easily containerized using Docker for development and deploy
 - The controller for this route handles access to a protected route.
 - It checks if the user is logged in by examining the user's session.
 - If the user is logged in, it sends a success message. If not, it sends an error message.
-
-### Tech Stack
