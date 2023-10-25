@@ -1,10 +1,10 @@
 # Project Name
 
-Auth
+AUTH
 
 ## Description
 
-[Provide a brief description of your project, its purpose, and any other relevant information.]
+A Backend Api That handles User Authentication
 
 ## Tech Stack
 
@@ -52,7 +52,7 @@ This project can be easily containerized using Docker for development and deploy
    docker compose up
    ```
 
-3. Access the application in from an http client like nodemon `http://localhost:3001`.
+3. Access the application in from an http client like nodemon `http://localhost:3001`. And send request to following routes:
 
 ### User Registration
 
