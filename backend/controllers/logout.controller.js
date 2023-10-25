@@ -1,4 +1,4 @@
 module.exports = async (req, res) => {
   req.session.destroy();
-  res.clearCookie("sessionCookie").sendStatus(204);
+  res.clearCookie("sessionCookie").status(200).redirect("/");
 };

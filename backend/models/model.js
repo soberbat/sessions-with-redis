@@ -7,7 +7,7 @@ module.exports = {
       await db.execute(sql.insertUserSQL, [username, password, email]);
       return { message: sql.success, isSuccesfull: true };
     } catch (error) {
-      console.log(error);
+      console.log(error.sqlMessage);
       return { message: sql.userExist, isSuccesfull: false };
     }
   },
@@ -31,7 +31,7 @@ module.exports = {
         message: isPasswordCorrect ? sql.success : sql.wrongPassword,
       };
     } catch (error) {
-      console.log(error);
+      console.log(error.sqlMessage);
     }
   },
   checkPassword: function (userData, password) {

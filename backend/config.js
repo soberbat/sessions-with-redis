@@ -1,3 +1,5 @@
+const { redisStore } = require("./utilies/redis");
+
 const corsOptions = {
   origin: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -6,6 +8,7 @@ const corsOptions = {
 };
 
 const sessionOptions = {
+  store: redisStore,
   name: "sessionCookie",
   secret: "mysecret",
   saveUninitialized: false,

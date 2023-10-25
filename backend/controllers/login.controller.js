@@ -10,8 +10,8 @@ module.exports = async (req, res) => {
 
   if (isSuccesfull) {
     req.session.userSessionID = username;
-    res.status(200).send({ isSuccesfull, message });
+    res.status(200).redirect("/dashboard");
   } else {
-    res.status(200).send({ isSuccesfull, message });
+    res.status(200).send({ message });
   }
 };

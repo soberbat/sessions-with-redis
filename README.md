@@ -1,34 +1,122 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Name
 
-## Getting Started
+Auth
 
-First, run the development server:
+## Description
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+[Provide a brief description of your project, its purpose, and any other relevant information.]
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is built using the following technologies and tools:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Express**: A fast and minimal Node.js web application framework for building robust and scalable web applications.
 
-## Learn More
+- **CORS (Cross-Origin Resource Sharing)**: Middleware for Express that enables cross-origin requests and defines which domains are allowed to access resources on your server.
 
-To learn more about Next.js, take a look at the following resources:
+- **Redis**: An open-source, in-memory data structure store used for caching, session management, and other data storage needs.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **MySQL**: A relational database management system used for storing and managing structured data.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Cookies for Authentication**: A strategy for user authentication that relies on cookies to store and manage session data securely.
 
-## Deploy on Vercel
+- **Docker**: A platform for developing, shipping, and running applications in containers. It provides an efficient and consistent environment for your application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To get started with this project, follow these steps:
+
+1. [Clone or download the repository]
+
+2. [NPM Install]
+
+3. [Build and run the Docker container.](#docker-usage)
+
+## Usage
+
+[Explain how to use your project, provide code examples, and give users an understanding of how to interact with your APIs.]
+
+## Docker Usage
+
+This project can be easily containerized using Docker for development and deployment. Follow these steps to build and run the project in a Docker container:
+
+1. Build the Docker image:
+
+   ```bash
+   docker build -t authbackend .
+   ```
+
+2. Run the Docker container:
+
+   ```bash
+   docker compose up
+   ```
+
+3. Access the application in from an http client like nodemon `http://localhost:3001`.
+
+### User Registration
+
+**Route:** `/signup`
+
+**What it does:**
+
+- This is where you sign up for a new user account.
+- To sign up, you need to send a POST request with your chosen username, password, and email.
+- If your registration is successful, you'll be logged in, a cookie will be sent and you will be taken to your dashboard.
+- If there's a problem with your registration, you'll receive an error message.
+
+- The controller for this route handles user registration.
+- It extracts the user's chosen username, password, and email from the request.
+- It attempts to create a new user in the system, and the success or failure of this process is communicated in the response.
+
+### User Login
+
+**Route:** `/login`
+
+**What it does:**
+
+- This is where you log in to your user account.
+- To log in, you send a POST request with your username and password.
+- If your registration is successful, you'll be logged in, a cookie will be sent and you will be taken to your dashboard.
+- If there's an issue with your login, you'll receive an error message.
+
+- The controller for this route manages user login.
+- It extracts the user's username and password from the request.
+- It checks if the user exists and if the provided credentials are valid. The success or failure of the login attempt is communicated in the response.
+
+### User Logout
+
+**Route:** `/logout`
+
+**What it does:**
+
+- This is where you log out of your user account.
+- It logs you out by ending your current session and clearing your session cookie.
+- After logging out, you'll be redirected to the home page.
+
+- To log out, simply access this route. No input is needed.
+- You'll be logged out and sent back to the home page.
+
+- The controller for this route is responsible for user logout.
+- It destroys the user's current session, effectively logging them out, and clears the session cookie.
+- After logging out, the user is redirected to the root page.
+
+### Protected Route
+
+**Route:** `/dashboard`
+
+**What it does:**
+
+- This is a protected route, meaning it's only accessible if you're logged in.
+- If you have an active session (meaning you're logged in), you'll receive a message confirming your access to the protected route.
+- If you're not logged in, you'll receive an error message stating that you can't access the route.
+
+- This route is protected, and you need to be logged in to access it.
+- If you're logged in, you'll get a success message; otherwise, you'll receive an error.
+- To access this protected route, you must first log in.
+
+- The controller for this route handles access to a protected route.
+- It checks if the user is logged in by examining the user's session.
+- If the user is logged in, it sends a success message. If not, it sends an error message.
+
+### Tech Stack
