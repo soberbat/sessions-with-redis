@@ -16,7 +16,7 @@ const sessionOptions = {
   cookie: {
     path: "/",
     maxAge: 1000 * 60 * 30,
-    sameSite: "strict",
+    sameSite: "none",
   },
 };
 
