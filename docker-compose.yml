@@ -1,28 +1,12 @@
-version: "3"
+version: "3.5"
 services:
-  mysql:
-    image: mysql:latest
-    container_name: my-mysql-container
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docker-next
     ports:
-      - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: user
-      MYSQL_PASSWORD: pass
+      - "3000:3000"
     volumes:
-      - mysql-data:/var/lib/mysql
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-  redis:
-    image: redis
-  frontend:
-    image: frontendauth
-    ports:
-      - 3000:3000
-
-volumes:
-  mysql-data:
+      - .:/app
+      - /app/node_modules

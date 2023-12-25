@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
 
   if (isSuccesfull) {
     req.session.userSessionID = username;
-    res.status(200).redirect("/dashboard");
+    res.status(200).send({ isSuccesfull, message });
   } else {
     res.status(200).send({ isSuccesfull, message });
   }

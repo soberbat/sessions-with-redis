@@ -20,6 +20,7 @@ export default function LoginPage() {
   const onLogin = async (e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
     const response = await Login(username, password);
+
     const { isSuccesfull, message } = response.data;
 
     if (isSuccesfull) {
